@@ -22,9 +22,9 @@ steps:
   image: wangsiye/aliyun-ossutil:latest
   environment:
     OSS_KEY_ID:
-      from_secret: OSS_KEY_ID
+      from_secret: aliyun_access_id
     OSS_KEY_SECRET:
-      from_secret: OSS_KEY_SECRET
+      from_secret: aliyun_access_secret
   commands:
   - ossutil config  -L CH -e "oss-cn-shenzhen.aliyuncs.com" -i $OSS_KEY_ID -k $OSS_KEY_SECRET
   - ossutil cp -rf ./dist oss://dev-tool/aliyun-ecs
